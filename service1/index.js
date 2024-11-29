@@ -9,8 +9,7 @@ const NODE2_URL= process.env.NODE2_URL;
 const NODE3_URL= process.env.NODE3_URL;
 
 app.get('/test1', function (req, res) {
-  res.send(`listening on Port: ${PORT} 
-  \n${TEXT}`);
+  res.send(`listening on Port: ${PORT}  ||  ${TEXT}`);
 });
 
 
