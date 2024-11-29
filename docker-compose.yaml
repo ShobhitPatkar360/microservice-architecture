@@ -11,7 +11,7 @@ services:
       NODE1_URL: http://service1:3001
       NODE2_URL: http://service2:3002
       NODE3_URL: http://service3:3003      
-      TEXT: "This is text for node 1 env"
+      TEXT: "Response from Node Service 1"
     command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
     volumes:
       - type: bind
@@ -30,7 +30,7 @@ services:
       NODE1_URL: http://service1:3001
       NODE2_URL: http://service2:3002
       NODE3_URL: http://service3:3003      
-      TEXT: "This is text for node 2 env"
+      TEXT: "Response from Node Service 2"
     command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
     volumes:
       - type: bind
@@ -49,7 +49,7 @@ services:
       NODE1_URL: http://service1:3001
       NODE2_URL: http://service2:3002
       NODE3_URL: http://service3:3003      
-      TEXT: "This is text for node 3 env"
+      TEXT: "Response from Node Service 3"
     command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
     volumes:
       - type: bind
