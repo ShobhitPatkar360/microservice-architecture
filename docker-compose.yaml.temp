@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  service1:
+    build: 
+      context: .
+      dockerfile: Dockerfile1
+    container_name: service1_container
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+      NODE1_URL: http://service1:3001
+      NODE2_URL: http://service2:3002
+      NODE3_URL: http://service3:3003      
+      TEXT: "This is text for node 1 env"
+    command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
+    volumes:
+      - type: bind
+        source: /app/service1
+        target: /my-app
+      - type: volume
+        source: my-volume
+        target: /volume-data
+  service2:
+    build: 
+      context: .
+      dockerfile: Dockerfile2
+    container_name: service2_container
+    ports:
+      - 3002:3002
+    environment:
+      PORT: 3002
+      NODE1_URL: http://service1:3001
+      NODE2_URL: http://service2:3002
+      NODE3_URL: http://service3:3003      
+      TEXT: "This is text for node 2 env"
+    command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
+    volumes:
+      - type: bind
+        source: /app/service2
+        target: /my-app
+      - type: volume
+        source: my-volume
+        target: /volume-data
+  service3:
+    build: 
+      context: .
+      dockerfile: Dockerfile3
+    container_name: service3_container
+    ports:
+      - 3003:3003
+    environment:
+      PORT: 3003
+      NODE1_URL: http://service1:3001
+      NODE2_URL: http://service2:3002
+      NODE3_URL: http://service3:3003      
+      TEXT: "This is text for node 3 env"
+    command: ["bash", "-c", "cd /my-app && npm i && node index.js"]
+    volumes:
+      - type: bind
+        source: /app/service3
+        target: /my-app
+      - type: volume
+        source: my-volume
+        target: /volume-data
+volumes:
+  my-volume: {}

@@ -1,0 +1,7 @@
+# for Dockerfile1
+
+FROM shubh360/node1:04
+
+WORKDIR /my-app
+
+CMD ["node","index.js"]
