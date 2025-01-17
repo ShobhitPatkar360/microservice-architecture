@@ -3,11 +3,11 @@ var express = require('express');
 var app = express();
 const cors = require('cors');
 
-const PORT = process.env.PORT
-const TEXT = process.env.TEXT;
-const NODE1_URL= process.env.NODE1_URL;
-const NODE2_URL= process.env.NODE2_URL;
-const NODE3_URL= process.env.NODE3_URL;
+const PORT = process.env.PORT || 3001;
+const TEXT = process.env.TEXT || "This is node 1";
+const NODE1_URL= process.env.NODE1_URL || "127.0.0.1:3001" ;
+const NODE2_URL= process.env.NODE2_URL || "127.0.0.1:3002" ;;
+const NODE3_URL= process.env.NODE3_URL || "127.0.0.1:3003" ;;
 
 app.use(cors()); 
 app.get('/test1', function (req, res) {
