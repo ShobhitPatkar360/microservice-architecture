@@ -10,7 +10,7 @@ const NODE2_URL= process.env.NODE2_URL || "98.80.98.182:3002" ;;
 const NODE3_URL= process.env.NODE3_URL || "98.80.98.182:3003" ;;
 
 app.use(cors()); 
-app.get('/test2', function (req, res) {
+app.get('/test', function (req, res) {
   res.send(`listening on Port: ${PORT}  ||  ${TEXT}`);
 });
 
