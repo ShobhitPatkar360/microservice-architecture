@@ -5,9 +5,9 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3003;
 const TEXT = process.env.TEXT || "This is node 3";
-const NODE1_URL= process.env.NODE1_URL || "127.0.0.1:3001" ;
-const NODE2_URL= process.env.NODE2_URL || "127.0.0.1:3002" ;;
-const NODE3_URL= process.env.NODE3_URL || "127.0.0.1:3003" ;;
+const NODE1_URL= process.env.NODE1_URL || "98.80.98.182:3001" ;
+const NODE2_URL= process.env.NODE2_URL || "98.80.98.182:3002" ;;
+const NODE3_URL= process.env.NODE3_URL || "98.80.98.182:3003" ;;
 
 app.use(cors()); 
 app.get('/test3', function (req, res) {
