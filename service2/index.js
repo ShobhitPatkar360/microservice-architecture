@@ -5,9 +5,9 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3002;
 const TEXT = process.env.TEXT || "This is node 2";
-const NODE1_URL= process.env.NODE1_URL || "3.85.241.165:3001" ;
-const NODE2_URL= process.env.NODE2_URL || "3.85.241.165:3002" ;;
-const NODE3_URL= process.env.NODE3_URL || "3.85.241.165:3003" ;;
+const NODE1_URL= process.env.NODE1_URL || "3.85.241.165:3001/test1" ;
+const NODE2_URL= process.env.NODE2_URL || "3.85.241.165:3002/test2" ;;
+const NODE3_URL= process.env.NODE3_URL || "3.85.241.165:3003/test3" ;;
 
 app.use(cors()); 
 app.get('/test2', function (req, res) {
@@ -16,7 +16,7 @@ app.get('/test2', function (req, res) {
 
 
 // app.get('/test1', function (req, res) {
-//   axios.get("3.85.241.165:3001/test1") 
+//   axios.get("3.85.241.165:3001/test1/test1") 
 //   .then(response => {
 //     res.send(response.data);
 //   })
@@ -30,7 +30,7 @@ app.get('/test2', function (req, res) {
 app.get('/test1', async (req, res) => {
   try {
       // Make a GET request to localhost:3002
-      const response = await axios.get("http://3.85.241.165:3001");
+      const response = await axios.get("http://3.85.241.165:3001/test1");
       // Send the response from the external API to the client
       res.json({
           message: 'Data fetched from localhost:3001',
@@ -50,7 +50,7 @@ app.get('/test1', async (req, res) => {
 app.get('/test3', async (req, res) => {
     try {
         // Make a GET request to localhost:3002
-        const response = await axios.get("http://3.85.241.165:3003");
+        const response = await axios.get("http://3.85.241.165:3003/test3");
         // Send the response from the external API to the client
         res.json({
             message: 'Data fetched from localhost:3003',
@@ -69,7 +69,7 @@ app.get('/test3', async (req, res) => {
 
 
 // app.get('/test3', function (req, res) {
-//   axios.get("3.85.241.165:3003/test3")
+//   axios.get("3.85.241.165:3003/test3/test3")
 //   .then(response => {
 //     res.send(response.data);
 //   })
