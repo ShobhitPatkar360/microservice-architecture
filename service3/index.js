@@ -5,12 +5,12 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3003;
 const TEXT = process.env.TEXT || "This is node 3";
-const NODE1_URL= process.env.NODE1_URL || "98.80.98.182:3001" ;
-const NODE2_URL= process.env.NODE2_URL || "98.80.98.182:3002" ;;
-const NODE3_URL= process.env.NODE3_URL || "98.80.98.182:3003" ;;
+const NODE1_URL= process.env.NODE1_URL || "container1:3001" ;
+const NODE2_URL= process.env.NODE2_URL || "container2:3002" ;;
+const NODE3_URL= process.env.NODE3_URL || "container3:3003" ;;
 
 app.use(cors()); 
-app.get('/test', function (req, res) {
+app.get('/test3', function (req, res) {
   res.send(`listening on Port: ${PORT}  ||  ${TEXT}`);
 });
 
