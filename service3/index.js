@@ -11,7 +11,7 @@ const NODE3_URL= process.env.NODE3_URL || "3.85.241.165:3003" ;;
 
 app.use(cors()); 
 app.get('/test3', function (req, res) {
-  res.send("listening on Port: ${PORT}  ||  ${TEXT}");
+  res.send(`listening on Port: ${PORT}  ||  ${TEXT}`);
 });
 
 
