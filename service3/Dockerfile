@@ -15,5 +15,5 @@ COPY . .
 EXPOSE 3003
  
 # Run application
-#CMD ["node", "index.js"]
-CMD ["sleep", "infinity"]
+CMD ["node", "index.js"]
+#CMD ["sleep", "infinity"]
