@@ -6,8 +6,8 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3002;
 const TEXT = process.env.TEXT || "This is node 2";
 const NODE1_URL= process.env.NODE1_URL || "localhost:3001/test1" ;
-const NODE2_URL= process.env.NODE2_URL || "localhost:3002/test2" ;;
-const NODE3_URL= process.env.NODE3_URL || "localhost:3003/test3" ;;
+const NODE2_URL= process.env.NODE2_URL || "localhost:3002/test2" ;
+const NODE3_URL= process.env.NODE3_URL || "localhost:3003/test3" ;
 
 app.use(cors()); 
 app.get('/test2', function (req, res) {
